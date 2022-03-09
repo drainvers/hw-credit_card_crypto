@@ -17,7 +17,7 @@ module LuhnValidator
       a + get_val(d, i)
     end
 
-    check % 10 == 0
+    (check % 10).zero?
   end
 
   def get_val(digit, index)
