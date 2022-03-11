@@ -7,11 +7,10 @@ module LuhnValidator
   # assumes: a local String called 'number' exists
   # returns: true/false whether last digit is correct
   def validate_checksum
-    nums_a = number.to_s.chars.map(&:to_i)
+    nums_a = number.chars.map(&:to_i).reverse
 
     # TODO: use the integers in nums_a to validate its last check digit
     check = nums_a
-            .reverse
             .each_with_index
             .reduce(0) do |a, (d, i)|
       a + get_val(d, i)

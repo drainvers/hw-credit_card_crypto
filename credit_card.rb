@@ -13,21 +13,21 @@ class CreditCard
 
   def initialize(number, expiration_date, owner, credit_network)
     # TODO: initialize the instance variables listed above
-    @number = number
-    @expiration_date = expiration_date
-    @owner = owner
-    @credit_network = credit_network
+    @number = number.to_s
+    @expiration_date = expiration_date.to_s
+    @owner = owner.to_s
+    @credit_network = credit_network.to_s
   end
 
   # returns json string
-  def to_json(*_args)
+  def to_json(*args)
     {
       # TODO: setup the hash with all instance variables to serialize into json
-      'number' => number,
-      'expiration_date' => expiration_date,
-      'owner' => owner,
-      'credit_network' => credit_network
-    }.to_json
+      'number' => @number,
+      'expiration_date' => @expiration_date,
+      'owner' => @owner,
+      'credit_network' => @credit_network
+    }.to_json(*args)
   end
 
   # returns all card information as single string
